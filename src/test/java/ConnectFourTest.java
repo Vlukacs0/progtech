@@ -35,4 +35,3 @@ class ConnectFourTest {
         assertTrue(game.checkWin('S'));
     }
 }
-
