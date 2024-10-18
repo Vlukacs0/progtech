@@ -14,6 +14,7 @@ public class ConnectFour {
     private Player human;
     private Player ai;
     private GameState gameState;
+    private DatabaseManager dbManager = new DatabaseManager(); // Adatbázis kezelő
 
     public ConnectFour(int rows, int columns) {
         if (rows < 4 || columns < 4 || rows > 12 || columns > 12 || columns > rows) {
@@ -40,10 +41,10 @@ public class ConnectFour {
     public GameState getGameState() {
         return gameState;
     }
+
     public void playGame() {
-        System.out.print("Kérlek, add meg a játékállás fájl nevét (vagy nyomj Entert az új játékhoz): ");
         String filePath = scanner.nextLine().trim();
-        System.out.println("Fájl név beolvasva: " + filePath);
+
         try {
             if (!filePath.isEmpty()) {
                 gameState = GameState.loadFromFile(filePath);
@@ -51,6 +52,7 @@ public class ConnectFour {
                 System.out.print("Kérlek, add meg a neved: ");
                 String playerName = scanner.nextLine();
                 human = new Player(playerName, 'S');
+                dbManager.addOrUpdatePlayer(playerName); // Regisztráljuk a játékost az adatbázisba
                 gameState = new GameState(rows, columns);
             }
         } catch (IOException e) {
@@ -75,6 +77,7 @@ public class ConnectFour {
             if (checkWin(currentPlayer.symbol())) {
                 gameState.printBoard();
                 System.out.println(currentPlayer.name() + " nyert!");
+                dbManager.incrementWins(currentPlayer.name()); // Győzelem frissítése az adatbázisban
                 break;
             }
 
@@ -86,6 +89,9 @@ public class ConnectFour {
 
             currentPlayer = (currentPlayer == human ? ai : human);
         }
+
+        // High Score táblázat megjelenítése a játék végén
+        dbManager.printHighScores();
     }
 
     private Move humanTurn() {

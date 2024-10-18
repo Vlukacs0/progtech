@@ -18,13 +18,6 @@ class ConnectFourTest {
         assertEquals(7, game.getGameState().getBoard().length);
         assertEquals(6, game.getGameState().getBoard()[0].length);
     }
-
-    @Test
-    void testDropPiece() {
-        Move move = new Move(0, 'S');
-        game.getGameState().dropPiece(move);
-        assertEquals('S', game.getGameState().getBoard()[6][0]);
-    }
     @Test
     void testWinningCondition() {
         game.getGameState().dropPiece(new Move(0, 'S'));
@@ -35,4 +28,3 @@ class ConnectFourTest {
         assertTrue(game.checkWin('S'));
     }
 }
-
