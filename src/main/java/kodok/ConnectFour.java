@@ -40,12 +40,10 @@ public class ConnectFour {
     public GameState getGameState() {
         return gameState;
     }
-
     public void playGame() {
         System.out.print("Kérlek, add meg a játékállás fájl nevét (vagy nyomj Entert az új játékhoz): ");
         String filePath = scanner.nextLine().trim();
         System.out.println("Fájl név beolvasva: " + filePath);
-
         try {
             if (!filePath.isEmpty()) {
                 gameState = GameState.loadFromFile(filePath);
