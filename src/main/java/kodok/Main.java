@@ -21,7 +21,7 @@ public class Main {
 
         if (!filePath.isEmpty()) {
             try {
-                game.getGameState().loadFromFile(filePath);
+                GameState.loadFromFile(filePath);
             } catch (IOException e) {
                 System.out.println("Hiba a fájl beolvasása közben: " + e.getMessage());
                 return;
