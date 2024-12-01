@@ -99,4 +99,53 @@ public class GameState {
             throw new IOException("Hiba a fájl beolvasása közben: " + e.getMessage());
         }
     }
+
+    public boolean checkWin(char symbol) {
+        // Ellenőrizzük a vízszintes nyerést
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < columns - 3; col++) {
+                if (board[row][col] == symbol &&
+                        board[row][col + 1] == symbol &&
+                        board[row][col + 2] == symbol &&
+                        board[row][col + 3] == symbol) {
+                    return true;
+                }
+            }
+        }
+
+        for (int col = 0; col < columns; col++) {
+            for (int row = 0; row < rows - 3; row++) {
+                if (board[row][col] == symbol &&
+                        board[row + 1][col] == symbol &&
+                        board[row + 2][col] == symbol &&
+                        board[row + 3][col] == symbol) {
+                    return true;
+                }
+            }
+        }
+
+        for (int row = 0; row < rows - 3; row++) {
+            for (int col = 0; col < columns - 3; col++) {
+                if (board[row][col] == symbol &&
+                        board[row + 1][col + 1] == symbol &&
+                        board[row + 2][col + 2] == symbol &&
+                        board[row + 3][col + 3] == symbol) {
+                    return true;
+                }
+            }
+        }
+
+        for (int row = 0; row < rows - 3; row++) {
+            for (int col = 3; col < columns; col++) {
+                if (board[row][col] == symbol &&
+                        board[row + 1][col - 1] == symbol &&
+                        board[row + 2][col - 2] == symbol &&
+                        board[row + 3][col - 3] == symbol) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }
