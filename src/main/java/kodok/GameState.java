@@ -17,18 +17,27 @@ public class GameState {
         this.currentPlayer = 'S';
     }
 
-    private void resetBoard() {
+    public void resetBoard() {
         for (int i = 0; i < rows; i++) {
             Arrays.fill(board[i], ConnectFour.EMPTY);
         }
     }
 
     public void dropPiece(Move move) {
+        if (move.column() < 0 || move.column() >= columns) {
+            throw new IllegalArgumentException("Érvénytelen oszlop!");
+        }
+
+        boolean placed = false;
         for (int i = rows - 1; i >= 0; i--) {
             if (board[i][move.column()] == ConnectFour.EMPTY) {
                 board[i][move.column()] = move.symbol();
+                placed = true;
                 break;
             }
+        }
+        if (!placed) {
+            throw new IllegalArgumentException("A sor már tele van!");
         }
     }
 
@@ -101,7 +110,6 @@ public class GameState {
     }
 
     public boolean checkWin(char symbol) {
-        // Ellenőrizzük a vízszintes nyerést
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns - 3; col++) {
                 if (board[row][col] == symbol &&
@@ -135,6 +143,7 @@ public class GameState {
             }
         }
 
+        // Diagonális ellenőrzés (jobbról balra)
         for (int row = 0; row < rows - 3; row++) {
             for (int col = 3; col < columns; col++) {
                 if (board[row][col] == symbol &&

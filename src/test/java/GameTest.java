@@ -51,19 +51,16 @@ class GameStateTest {
 
     @Test
     void testVerticalWin() {
-
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
-
 
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won vertically");
     }
 
     @Test
     void testDiagonalWin() {
-
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
@@ -71,14 +68,12 @@ class GameStateTest {
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(3, 'S'));
-
 
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won diagonally (left to right)");
     }
 
     @Test
     void testReverseDiagonalWin() {
-
         gameState.dropPiece(new Move(3, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
@@ -86,7 +81,6 @@ class GameStateTest {
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
-
 
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won diagonally (right to left)");
     }
@@ -100,5 +94,59 @@ class GameStateTest {
 
         assertFalse(gameState.checkWin('S'), "Player 'S' should not have won");
         assertFalse(gameState.checkWin('O'), "Player 'O' should not have won");
+    }
+
+    @Test
+    void testColumnFull() {
+        // Fill the first column
+        for (int i = 0; i < 6; i++) {
+            gameState.dropPiece(new Move(0, 'S'));
+        }
+
+        assertThrows(IllegalArgumentException.class, () -> gameState.dropPiece(new Move(0, 'O')));
+    }
+
+    @Test
+    void testInvalidMoveColumnOutOfRange() {
+
+        assertThrows(IllegalArgumentException.class, () -> gameState.dropPiece(new Move(-1, 'S')));
+        assertThrows(IllegalArgumentException.class, () -> gameState.dropPiece(new Move(7, 'S')));
+    }
+
+    @Test
+    void testInvalidMoveRowFull() {
+
+        for (int i = 0; i < 6; i++) {
+            gameState.dropPiece(new Move(1, 'S'));
+        }
+
+        assertThrows(IllegalArgumentException.class, () -> gameState.dropPiece(new Move(1, 'O')));
+    }
+
+    @Test
+    void testGameOverState() {
+        gameState.dropPiece(new Move(0, 'S'));
+        gameState.dropPiece(new Move(1, 'O'));
+        gameState.dropPiece(new Move(0, 'S'));
+        gameState.dropPiece(new Move(1, 'O'));
+        gameState.dropPiece(new Move(0, 'S'));
+        gameState.dropPiece(new Move(1, 'O'));
+        gameState.dropPiece(new Move(0, 'S'));
+
+        assertTrue(gameState.checkWin('S'), "Player 'S' should have won");
+        assertFalse(gameState.checkWin('O'), "Player 'O' should not have won");
+    }
+
+    @Test
+    void testResetBoard() {
+        gameState.dropPiece(new Move(0, 'S'));
+        gameState.resetBoard();
+
+        char[][] board = gameState.getBoard();
+        for (char[] row : board) {
+            for (char cell : row) {
+                assertEquals(ConnectFour.EMPTY, cell);
+            }
+        }
     }
 }

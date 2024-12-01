@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect_four.db" beforeDir="false" afterPath="$PROJECT_DIR$/connect_four.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +51,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GameTest.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.ConnectFourTest.executor": "Run",
     "JUnit.ConnectFourTest.testDropPiece.executor": "Run",
     "JUnit.ConnectFourTest.testInitialGameState.executor": "Run",
     "JUnit.ConnectFourTest.testIsBoardFull.executor": "Run",
+    "JUnit.ConnectFourTest.testMoveEquality.executor": "Run",
+    "JUnit.DatabaseManagerTest.testCreateTables.executor": "Run",
+    "JUnit.DatabaseManagerTest.testPrintHighScores.executor": "Run",
+    "JUnit.GameStateTest (1).executor": "Run",
     "JUnit.GameStateTest,testInitialBoard and 2 more.executor": "Run",
     "JUnit.GameStateTest.executor": "Run",
+    "JUnit.GameStateTest.testColumnFull.executor": "Run",
+    "JUnit.GameStateTest.testCustomBoardSize.executor": "Run",
+    "JUnit.GameStateTest.testNoWin.executor": "Run",
+    "JUnit.GameStateTest.testResetBoard.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -64,7 +78,7 @@
       <recent name="C:\Users\User1\Documents\java\progtech\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameStateTest.testNoWin">
+  <component name="RunManager" selected="JUnit.GameStateTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kodok.Main" />
       <module name="progtech" />
@@ -108,19 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameStateTest,testInitialBoard and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="progtech" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="kodok.GameStateTest,testInitialBoard" />
-        <pattern testClass="kodok.GameStateTest,testDropPiece" />
-        <pattern testClass="kodok.GameStateTest,testIsBoardFull" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameStateTest.testNoWin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameStateTest.testColumnFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progtech" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +132,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="kodok" />
       <option name="MAIN_CLASS_NAME" value="kodok.GameStateTest" />
-      <option name="METHOD_NAME" value="testNoWin" />
+      <option name="METHOD_NAME" value="testColumnFull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameStateTest.testResetBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progtech" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kodok.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="kodok" />
+      <option name="MAIN_CLASS_NAME" value="kodok.GameStateTest" />
+      <option name="METHOD_NAME" value="testResetBoard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameStateTest.testNoWin" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GameStateTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GameStateTest.testResetBoard" />
+        <item itemvalue="JUnit.GameStateTest.testColumnFull" />
         <item itemvalue="JUnit.ConnectFourTest" />
-        <item itemvalue="JUnit.GameStateTest,testInitialBoard and 2 more" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733015186369</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733015357188</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733015357188</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,5 +296,20 @@
     <MESSAGE value="ja" />
     <MESSAGE value="jatek" />
     <option name="LAST_COMMIT_MESSAGE" value="jatek" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/GameTest.java</url>
+          <line>140</line>
+          <properties class="kodok.GameStateTest" method="testResetBoard">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
