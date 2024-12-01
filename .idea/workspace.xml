@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek">
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +71,7 @@
       <recent name="C:\Users\User1\Documents\java\progtech\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GameStateTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kodok.Main" />
       <module name="progtech" />
@@ -155,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GameStateTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GameStateTest.testResetBoard" />
         <item itemvalue="JUnit.GameStateTest.testColumnFull" />
         <item itemvalue="JUnit.ConnectFourTest" />
@@ -308,7 +302,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733075008221</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733083797132</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733083797132</updated>
+    </task>
+    <task id="LOCAL-00019" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733083806945</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733083806946</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
