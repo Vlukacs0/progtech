@@ -41,31 +41,29 @@ class GameStateTest {
 
     @Test
     void testHorizontalWin() {
-        // Hozzáadunk 4 darab 'S' karaktert vízszintesen, hogy nyerjen
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(3, 'S'));
 
-        // Ellenőrizzük, hogy a játékos 'S' nyert
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won horizontally");
     }
 
     @Test
     void testVerticalWin() {
-        // Hozzáadunk 4 darab 'S' karaktert függőlegesen, hogy nyerjen
+
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
 
-        // Ellenőrizzük, hogy a játékos 'S' nyert
+
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won vertically");
     }
 
     @Test
     void testDiagonalWin() {
-        // Hozzáadunk 4 darab 'S' karaktert balról jobbra átlósan
+
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
@@ -74,13 +72,13 @@ class GameStateTest {
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(3, 'S'));
 
-        // Ellenőrizzük, hogy a játékos 'S' nyert átlósan
+
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won diagonally (left to right)");
     }
 
     @Test
     void testReverseDiagonalWin() {
-        // Hozzáadunk 4 darab 'S' karaktert jobbról balra átlósan
+
         gameState.dropPiece(new Move(3, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
         gameState.dropPiece(new Move(2, 'S'));
@@ -89,19 +87,17 @@ class GameStateTest {
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(0, 'S'));
 
-        // Ellenőrizzük, hogy a játékos 'S' nyert átlósan
+
         assertTrue(gameState.checkWin('S'), "Player 'S' should have won diagonally (right to left)");
     }
 
     @Test
     void testNoWin() {
-        // Hozzáadunk különböző darabokat, de nem lesz nyerő kombináció
         gameState.dropPiece(new Move(0, 'S'));
         gameState.dropPiece(new Move(1, 'S'));
         gameState.dropPiece(new Move(2, 'O'));
         gameState.dropPiece(new Move(3, 'S'));
 
-        // Ellenőrizzük, hogy nincs nyerő kombináció
         assertFalse(gameState.checkWin('S'), "Player 'S' should not have won");
         assertFalse(gameState.checkWin('O'), "Player 'O' should not have won");
     }
