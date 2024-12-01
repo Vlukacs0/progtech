@@ -17,136 +17,145 @@ public class GameState {
 <span class="fc" id="L17">        this.currentPlayer = 'S';</span>
 <span class="fc" id="L18">    }</span>
 
-    private void resetBoard() {
+    public void resetBoard() {
 <span class="fc bfc" id="L21" title="All 2 branches covered.">        for (int i = 0; i &lt; rows; i++) {</span>
 <span class="fc" id="L22">            Arrays.fill(board[i], ConnectFour.EMPTY);</span>
         }
 <span class="fc" id="L24">    }</span>
 
     public void dropPiece(Move move) {
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        for (int i = rows - 1; i &gt;= 0; i--) {</span>
-<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (board[i][move.column()] == ConnectFour.EMPTY) {</span>
-<span class="fc" id="L29">                board[i][move.column()] = move.symbol();</span>
-<span class="fc" id="L30">                break;</span>
+<span class="fc bfc" id="L27" title="All 4 branches covered.">        if (move.column() &lt; 0 || move.column() &gt;= columns) {</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException(&quot;Érvénytelen oszlop!&quot;);</span>
+        }
+
+<span class="fc" id="L31">        boolean placed = false;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (int i = rows - 1; i &gt;= 0; i--) {</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (board[i][move.column()] == ConnectFour.EMPTY) {</span>
+<span class="fc" id="L34">                board[i][move.column()] = move.symbol();</span>
+<span class="fc" id="L35">                placed = true;</span>
+<span class="fc" id="L36">                break;</span>
             }
         }
-<span class="fc" id="L33">    }</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (!placed) {</span>
+<span class="fc" id="L40">            throw new IllegalArgumentException(&quot;A sor már tele van!&quot;);</span>
+        }
+<span class="fc" id="L42">    }</span>
 
     public boolean isColumnAvailable(int column) {
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        return board[0][column] == ConnectFour.EMPTY;</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        return board[0][column] == ConnectFour.EMPTY;</span>
     }
 
     public boolean isBoardFull() {
-<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (int c = 0; c &lt; columns; c++) {</span>
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">            if (board[0][c] == ConnectFour.EMPTY) {</span>
-<span class="nc" id="L42">                return false;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        for (int c = 0; c &lt; columns; c++) {</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">            if (board[0][c] == ConnectFour.EMPTY) {</span>
+<span class="nc" id="L51">                return false;</span>
             }
         }
-<span class="fc" id="L45">        return true;</span>
+<span class="fc" id="L54">        return true;</span>
     }
 
     public char[][] getBoard() {
-<span class="fc" id="L49">        return board;</span>
+<span class="fc" id="L58">        return board;</span>
     }
 
     public void setCurrentPlayer(char currentPlayer) {
-<span class="nc" id="L53">        this.currentPlayer = currentPlayer;</span>
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L62">        this.currentPlayer = currentPlayer;</span>
+<span class="nc" id="L63">    }</span>
 
     public void printBoard() {
-<span class="nc" id="L57">        StringBuilder sb = new StringBuilder();</span>
-<span class="nc bnc" id="L58" title="All 2 branches missed.">        for (int r = 0; r &lt; rows; r++) {</span>
-<span class="nc bnc" id="L59" title="All 2 branches missed.">            for (int c = 0; c &lt; columns; c++) {</span>
-<span class="nc" id="L60">                sb.append(board[r][c]).append(&quot; &quot;);</span>
+<span class="nc" id="L66">        StringBuilder sb = new StringBuilder();</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        for (int r = 0; r &lt; rows; r++) {</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">            for (int c = 0; c &lt; columns; c++) {</span>
+<span class="nc" id="L69">                sb.append(board[r][c]).append(&quot; &quot;);</span>
             }
-<span class="nc" id="L62">            sb.append(&quot;\n&quot;);</span>
+<span class="nc" id="L71">            sb.append(&quot;\n&quot;);</span>
         }
-<span class="nc" id="L64">        sb.append(&quot;Oszlopok: &quot;).append(String.join(&quot; &quot;, Arrays.stream(&quot;abcdefghijklmnopqrstuvwxyz&quot;.split(&quot;&quot;)).limit(columns).toArray(String[]::new)));</span>
-<span class="nc" id="L65">        System.out.println(sb);</span>
-<span class="nc" id="L66">    }</span>
+<span class="nc" id="L73">        sb.append(&quot;Oszlopok: &quot;).append(String.join(&quot; &quot;, Arrays.stream(&quot;abcdefghijklmnopqrstuvwxyz&quot;.split(&quot;&quot;)).limit(columns).toArray(String[]::new)));</span>
+<span class="nc" id="L74">        System.out.println(sb);</span>
+<span class="nc" id="L75">    }</span>
 
     public void saveToFile(String filePath) throws IOException {
-<span class="nc" id="L69">        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {</span>
-<span class="nc bnc" id="L70" title="All 2 branches missed.">            for (char[] row : board) {</span>
-<span class="nc" id="L71">                writer.write(row);</span>
-<span class="nc" id="L72">                writer.newLine();</span>
+<span class="nc" id="L78">        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">            for (char[] row : board) {</span>
+<span class="nc" id="L80">                writer.write(row);</span>
+<span class="nc" id="L81">                writer.newLine();</span>
             }
-<span class="nc" id="L74">            writer.write(currentPlayer);</span>
-<span class="nc" id="L75">            writer.newLine();</span>
+<span class="nc" id="L83">            writer.write(currentPlayer);</span>
+<span class="nc" id="L84">            writer.newLine();</span>
         }
-<span class="nc" id="L77">    }</span>
+<span class="nc" id="L86">    }</span>
 
     public static GameState loadFromFile(String filePath) throws IOException {
-<span class="nc" id="L80">        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {</span>
+<span class="nc" id="L89">        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {</span>
             String line;
-<span class="nc" id="L82">            StringBuilder boardBuilder = new StringBuilder();</span>
-<span class="nc bnc" id="L83" title="All 4 branches missed.">            while ((line = reader.readLine()) != null &amp;&amp; !line.isEmpty()) {</span>
-<span class="nc" id="L84">                boardBuilder.append(line).append(&quot;\n&quot;);</span>
+<span class="nc" id="L91">            StringBuilder boardBuilder = new StringBuilder();</span>
+<span class="nc bnc" id="L92" title="All 4 branches missed.">            while ((line = reader.readLine()) != null &amp;&amp; !line.isEmpty()) {</span>
+<span class="nc" id="L93">                boardBuilder.append(line).append(&quot;\n&quot;);</span>
             }
-<span class="nc" id="L86">            String[] rows = boardBuilder.toString().trim().split(&quot;\n&quot;);</span>
-<span class="nc" id="L87">            int rowCount = rows.length;</span>
-<span class="nc" id="L88">            int columnCount = rows[0].length();</span>
-<span class="nc" id="L89">            GameState gameState = new GameState(rowCount, columnCount);</span>
-<span class="nc bnc" id="L90" title="All 2 branches missed.">            for (int i = 0; i &lt; rowCount; i++) {</span>
-<span class="nc" id="L91">                gameState.board[i] = rows[i].toCharArray();</span>
+<span class="nc" id="L95">            String[] rows = boardBuilder.toString().trim().split(&quot;\n&quot;);</span>
+<span class="nc" id="L96">            int rowCount = rows.length;</span>
+<span class="nc" id="L97">            int columnCount = rows[0].length();</span>
+<span class="nc" id="L98">            GameState gameState = new GameState(rowCount, columnCount);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">            for (int i = 0; i &lt; rowCount; i++) {</span>
+<span class="nc" id="L100">                gameState.board[i] = rows[i].toCharArray();</span>
             }
-<span class="nc" id="L93">            line = reader.readLine();</span>
-<span class="nc bnc" id="L94" title="All 4 branches missed.">            if (line != null &amp;&amp; !line.isEmpty()) {</span>
-<span class="nc" id="L95">                gameState.setCurrentPlayer(line.charAt(0));</span>
+<span class="nc" id="L102">            line = reader.readLine();</span>
+<span class="nc bnc" id="L103" title="All 4 branches missed.">            if (line != null &amp;&amp; !line.isEmpty()) {</span>
+<span class="nc" id="L104">                gameState.setCurrentPlayer(line.charAt(0));</span>
             }
-<span class="nc" id="L97">            return gameState;</span>
-<span class="nc" id="L98">        } catch (IOException e) {</span>
-<span class="nc" id="L99">            throw new IOException(&quot;Hiba a fájl beolvasása közben: &quot; + e.getMessage());</span>
+<span class="nc" id="L106">            return gameState;</span>
+<span class="nc" id="L107">        } catch (IOException e) {</span>
+<span class="nc" id="L108">            throw new IOException(&quot;Hiba a fájl beolvasása közben: &quot; + e.getMessage());</span>
         }
     }
 
     public boolean checkWin(char symbol) {
-        // Ellenőrizzük a vízszintes nyerést
-<span class="fc bfc" id="L105" title="All 2 branches covered.">        for (int row = 0; row &lt; rows; row++) {</span>
-<span class="fc bfc" id="L106" title="All 2 branches covered.">            for (int col = 0; col &lt; columns - 3; col++) {</span>
-<span class="pc bpc" id="L107" title="1 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        for (int row = 0; row &lt; rows; row++) {</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">            for (int col = 0; col &lt; columns - 3; col++) {</span>
+<span class="pc bpc" id="L115" title="1 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
                         board[row][col + 1] == symbol &amp;&amp;
                         board[row][col + 2] == symbol &amp;&amp;
                         board[row][col + 3] == symbol) {
-<span class="fc" id="L111">                    return true;</span>
+<span class="fc" id="L119">                    return true;</span>
                 }
             }
         }
 
-<span class="fc bfc" id="L116" title="All 2 branches covered.">        for (int col = 0; col &lt; columns; col++) {</span>
-<span class="fc bfc" id="L117" title="All 2 branches covered.">            for (int row = 0; row &lt; rows - 3; row++) {</span>
-<span class="pc bpc" id="L118" title="3 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        for (int col = 0; col &lt; columns; col++) {</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">            for (int row = 0; row &lt; rows - 3; row++) {</span>
+<span class="pc bpc" id="L126" title="3 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
                         board[row + 1][col] == symbol &amp;&amp;
                         board[row + 2][col] == symbol &amp;&amp;
                         board[row + 3][col] == symbol) {
-<span class="fc" id="L122">                    return true;</span>
+<span class="fc" id="L130">                    return true;</span>
                 }
             }
         }
 
-<span class="fc bfc" id="L127" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
-<span class="fc bfc" id="L128" title="All 2 branches covered.">            for (int col = 0; col &lt; columns - 3; col++) {</span>
-<span class="pc bpc" id="L129" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">            for (int col = 0; col &lt; columns - 3; col++) {</span>
+<span class="pc bpc" id="L137" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
                         board[row + 1][col + 1] == symbol &amp;&amp;
                         board[row + 2][col + 2] == symbol &amp;&amp;
                         board[row + 3][col + 3] == symbol) {
-<span class="nc" id="L133">                    return true;</span>
+<span class="nc" id="L141">                    return true;</span>
                 }
             }
         }
 
-<span class="fc bfc" id="L138" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
-<span class="fc bfc" id="L139" title="All 2 branches covered.">            for (int col = 3; col &lt; columns; col++) {</span>
-<span class="pc bpc" id="L140" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
+        // Diagonális ellenőrzés (jobbról balra)
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">            for (int col = 3; col &lt; columns; col++) {</span>
+<span class="pc bpc" id="L149" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
                         board[row + 1][col - 1] == symbol &amp;&amp;
                         board[row + 2][col - 2] == symbol &amp;&amp;
                         board[row + 3][col - 3] == symbol) {
-<span class="nc" id="L144">                    return true;</span>
+<span class="nc" id="L153">                    return true;</span>
                 }
             }
         }
 
-<span class="fc" id="L149">        return false;</span>
+<span class="fc" id="L158">        return false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

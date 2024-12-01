@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-java-connect-four,kodok,GameState,278,256,38,38,37,34,29,21,6,6
+java-connect-four,kodok,GameState,278,280,37,45,37,40,28,25,6,6
 java-connect-four,kodok,Main,79,0,2,0,27,0,3,0,2,0
 java-connect-four,kodok,DatabaseManager,136,0,2,0,42,0,6,0,5,0
 java-connect-four,kodok,ConnectFour,482,0,74,0,88,0,50,0,13,0

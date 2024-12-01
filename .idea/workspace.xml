@@ -6,10 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect_four.db" beforeDir="false" afterPath="$PROJECT_DIR$/connect_four.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/ConnectFour.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/ConnectFour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/DatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/kodok/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/kodok/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/kodok/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/kodok/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +92,7 @@
       <recent name="C:\Users\User1\Documents\java\progtech\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameStateTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kodok.Main" />
       <module name="progtech" />
@@ -156,8 +170,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameStateTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GameStateTest" />
         <item itemvalue="JUnit.GameStateTest.testResetBoard" />
         <item itemvalue="JUnit.GameStateTest.testColumnFull" />
         <item itemvalue="JUnit.ConnectFourTest" />
@@ -277,7 +291,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733015357188</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733072707111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733072707111</updated>
+    </task>
+    <task id="LOCAL-00015" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733072720255</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733072720255</updated>
+    </task>
+    <task id="LOCAL-00016" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733072732966</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733072732966</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,20 +334,5 @@
     <MESSAGE value="ja" />
     <MESSAGE value="jatek" />
     <option name="LAST_COMMIT_MESSAGE" value="jatek" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/GameTest.java</url>
-          <line>140</line>
-          <properties class="kodok.GameStateTest" method="testResetBoard">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
