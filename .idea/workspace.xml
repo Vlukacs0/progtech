@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="maven files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodok/ConnectFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodok/ConnectFour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConnectFourTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConnectFourTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodok/ConnectFour.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/ConnectFour.class" afterDir="false" />
-    </list>
+    <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,11 +143,20 @@
       <option name="project" value="LOCAL" />
       <updated>1729260400856</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733012533690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733012533690</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="maven files" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven files" />
+    <MESSAGE value="jatek" />
+    <option name="LAST_COMMIT_MESSAGE" value="jatek" />
   </component>
 </project>
