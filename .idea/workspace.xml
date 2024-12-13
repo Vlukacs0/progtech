@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f231fb52-432b-4df1-ad08-ebbb472b2a3d" name="Changes" comment="jatek">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tervezesi minta.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tervezesi minta.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1" beforeDir="false" afterPath="$PROJECT_DIR$/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/connect_four.db" beforeDir="false" afterPath="$PROJECT_DIR$/connect_four.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tervezesi minta.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodok/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kodok/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodok/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/kodok/GameState.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-kodok.GameStateTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/kodok.GameStateTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/kodok/GameStateTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +85,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User1\Documents\java\progtech" />
       <recent name="C:\Users\User1\Documents\java\progtech\src\main\java" />
       <recent name="C:\Users\User1\Documents\java\progtech\target" />
       <recent name="C:\Users\User1\Documents\java\progtech\src" />
@@ -332,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733085809510</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="jatek">
+      <option name="closed" value="true" />
+      <created>1733085974640</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733085974640</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

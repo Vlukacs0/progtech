@@ -143,19 +143,18 @@ public class GameState {
             }
         }
 
-        // Diagonális ellenőrzés (jobbról balra)
-<span class="fc bfc" id="L147" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
-<span class="fc bfc" id="L148" title="All 2 branches covered.">            for (int col = 3; col &lt; columns; col++) {</span>
-<span class="pc bpc" id="L149" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        for (int row = 0; row &lt; rows - 3; row++) {</span>
+<span class="fc bfc" id="L147" title="All 2 branches covered.">            for (int col = 3; col &lt; columns; col++) {</span>
+<span class="pc bpc" id="L148" title="7 of 8 branches missed.">                if (board[row][col] == symbol &amp;&amp;</span>
                         board[row + 1][col - 1] == symbol &amp;&amp;
                         board[row + 2][col - 2] == symbol &amp;&amp;
                         board[row + 3][col - 3] == symbol) {
-<span class="nc" id="L153">                    return true;</span>
+<span class="nc" id="L152">                    return true;</span>
                 }
             }
         }
 
-<span class="fc" id="L158">        return false;</span>
+<span class="fc" id="L157">        return false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

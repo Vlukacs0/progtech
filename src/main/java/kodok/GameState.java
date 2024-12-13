@@ -143,7 +143,6 @@ public class GameState {
             }
         }
 
-        // Diagonális ellenőrzés (jobbról balra)
         for (int row = 0; row < rows - 3; row++) {
             for (int col = 3; col < columns; col++) {
                 if (board[row][col] == symbol &&
